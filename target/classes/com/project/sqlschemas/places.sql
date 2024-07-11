@@ -1,0 +1,47 @@
+--------------------------------------------------------
+--  File created - Thursday-July-11-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PLACES
+--------------------------------------------------------
+
+  CREATE TABLE "CORE"."PLACES" 
+   (	"ROUTE_ID" NUMBER, 
+	"FROM_CITY" VARCHAR2(30 BYTE), 
+	"TO_CITY" VARCHAR2(30 BYTE), 
+	"TIMING" VARCHAR2(10 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into CORE.PLACES
+SET DEFINE OFF;
+Insert into CORE.PLACES (ROUTE_ID,FROM_CITY,TO_CITY,TIMING) values (1,'Mayiladuthurai','Chennai','09:00 AM');
+Insert into CORE.PLACES (ROUTE_ID,FROM_CITY,TO_CITY,TIMING) values (2,'Chennai','Salem','09:45 AM');
+Insert into CORE.PLACES (ROUTE_ID,FROM_CITY,TO_CITY,TIMING) values (3,'Trichy','Kanya Kumari','10:15 AM');
+Insert into CORE.PLACES (ROUTE_ID,FROM_CITY,TO_CITY,TIMING) values (4,'Chennai','Mayiladuthurai','08:00 PM');
+Insert into CORE.PLACES (ROUTE_ID,FROM_CITY,TO_CITY,TIMING) values (5,'Salem','Chennai','09:30 PM');
+Insert into CORE.PLACES (ROUTE_ID,FROM_CITY,TO_CITY,TIMING) values (6,'Kanya Kumari','Trichy','10:00 PM');
+--------------------------------------------------------
+--  DDL for Index SYS_C008239
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CORE"."SYS_C008239" ON "CORE"."PLACES" ("ROUTE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table PLACES
+--------------------------------------------------------
+
+  ALTER TABLE "CORE"."PLACES" ADD PRIMARY KEY ("ROUTE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
